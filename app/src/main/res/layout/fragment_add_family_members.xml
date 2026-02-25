@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AddFamilyMembersFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_18sdp">
+
+            <!-- Heading -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/heading2"
+                android:text="Search Family Member"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/_15sdp" />
+
+            <!-- Search Section with Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmailSearch"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:hint="Enter Email to Search"
+                    android:textColorHint="?attr/colorPrimary"
+                    app:endIconMode="none">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSearchEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_28sdp"
+                        android:inputType="textEmailAddress"
+                        style="@style/FormField" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="Search"
+                    android:textAllCaps="false"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_12sdp"
+                    app:icon="@drawable/ic_search"
+                    app:iconGravity="textEnd"
+                    android:textColor="@color/white"
+                    app:iconTint="@color/white"
+                    app:backgroundTint="?attr/colorPrimary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/errorBox"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:paddingBottom="@dimen/_10sdp"
+                android:visibility="gone">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:src="@drawable/ic_person"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="User not found or Invalid Email format."
+                    android:textColor="@color/muted_color"
+                    android:visibility="visible"
+                    android:layout_marginTop="@dimen/_5sdp" />
+
+            </LinearLayout>
+
+            <!-- Result Section -->
+            <LinearLayout
+                android:id="@+id/result_relation_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_15sdp"
+                android:background="@drawable/bg_card_rounded">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivFoundUserProfile"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:src="@drawable/ic_person"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_gravity="top"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvFoundUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="[User Name]"
+                            style="@style/heading3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="What is your relation with this person? He/She is my!"
+                            style="@style/descriptionText"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/muted_color" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Relation Chips: no RadioGroup (fixed) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupMaleRelations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        android:visibility="gone">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipFather"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Father" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipSon"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Son" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipBrother"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Brother" />
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupFemaleRelations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipMother"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mother" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipDaughter"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Daughter" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipSister"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sister" />
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupMaleToFemaleRelations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        android:visibility="gone">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipMyMother"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mother" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipMySister"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sister" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipMyDaughter"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Daughter" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipMyWife"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wife" />
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupFemaleToMaleRelations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        android:visibility="gone">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipMyFather"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Father" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipMyBrother"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Brother" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipMySon"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Son" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipMyHusband"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Husband" />
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSendRequest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_gravity="end"
+                        android:text="Send Request"
+                        android:textAllCaps="false"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingRight="@dimen/_12sdp"
+                        app:icon="@drawable/ic_add_person"
+                        app:iconTint="@color/white"
+                        android:textColor="@color/white"
+                        app:backgroundTint="?attr/colorPrimary" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Result Section -->
+            <LinearLayout
+                android:id="@+id/result_sent_request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_15sdp"
+                android:background="@drawable/bg_card_rounded">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivFoundPendingUserProfile"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:src="@drawable/ic_person"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_gravity="top"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvFoundPendingUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="[User Name]"
+                            style="@style/heading3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Request already sent to this person wait for response or cancel the request bellow."
+                            style="@style/descriptionText"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:textColor="@color/muted_color"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancelRequest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_gravity="end"
+                        android:text="Cancel"
+                        android:textAllCaps="false"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingRight="@dimen/_12sdp"
+                        app:icon="@drawable/ic_cancel"
+                        app:iconTint="?attr/colorPrimary"
+                        android:textColor="?attr/colorPrimary"
+                        app:backgroundTint="?attr/colorPrimaryVariant"
+                        android:outlineProvider="none"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_gravity="end"
+                        android:text="Pending"
+                        android:textAllCaps="false"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingRight="@dimen/_12sdp"
+                        app:icon="@drawable/ic_pending_person"
+                        app:iconTint="@color/white"
+                        android:textColor="@color/white"
+                        app:backgroundTint="?attr/colorPrimary" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Result Section -->
+            <LinearLayout
+                android:id="@+id/result_family_member"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_15sdp"
+                android:background="@drawable/bg_card_rounded">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivFoundUserMemberProfile"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:src="@drawable/ic_person"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_gravity="top"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tvFoundUserMemberName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="[User Name]"
+                                style="@style/heading3" />
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/rolAdmin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="@dimen/_6sdp"
+                                android:drawableStart="@drawable/ic_user_role"
+                                app:drawableTint="?attr/colorPrimary"
+                                android:textSize="13sp"
+                                android:textColor="?attr/colorPrimary"
+                                app:iconSize="@dimen/_13sdp"
+                                android:text=" Admin"
+                                android:visibility="gone"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Only admin can remove family members if you added someone then you will be him/her admin."
+                            style="@style/descriptionText"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:textColor="@color/muted_color"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRemoveMember"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_gravity="end"
+                        android:text="Remove"
+                        android:textAllCaps="false"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingRight="@dimen/_12sdp"
+                        app:icon="@drawable/ic_cancel"
+                        app:iconTint="?attr/colorPrimary"
+                        android:textColor="?attr/colorPrimary"
+                        app:backgroundTint="?attr/colorPrimaryVariant"
+                        android:outlineProvider="none"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRelation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_gravity="end"
+                        android:text="Member"
+                        android:textAllCaps="false"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingRight="@dimen/_12sdp"
+                        app:icon="@drawable/ic_person"
+                        app:iconTint="@color/white"
+                        android:textColor="@color/white"
+                        app:backgroundTint="?attr/colorPrimary" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

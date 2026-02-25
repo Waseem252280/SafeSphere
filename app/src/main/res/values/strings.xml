@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Safe Sphere</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="default_web_client_id">9127041855-gvntp0njo736a58vkmornfjnafqb2rv8.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">2835486116660689</string>
+    <string name="facebook_client_token">735f2499d28dfa7b5e831518637d043b</string>
+    <string name="fb_login_protocol_scheme">fb2835486116660689</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    google map api key-->
+    <string name="google_maps_key">
+    AIzaSyCPt740NmOtABnnISqrhM9LuUhNCtBm_JY
+    </string>
+
+
+</resources>

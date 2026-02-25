@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/android:colorBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TOP BAR -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="?attr/android:colorBackground"
+        android:padding="16dp">
+
+        <TextView
+            style="@style/heading"
+            android:text="Safe Sphere"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/android:textColor"
+            android:layout_alignParentStart="true"/>
+
+
+    </RelativeLayout>
+
+    <!-- SEARCH BAR -->
+    <LinearLayout
+        android:id="@+id/searchBar"
+        android:layout_below="@id/topBar"
+        android:layout_margin="12dp"
+        android:padding="10dp"
+        android:background="@drawable/bg_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_search_any"
+            android:tint="@color/lightGray"
+            android:layout_gravity="center_vertical"/>
+
+        <EditText
+            android:id="@+id/etSearchChats"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textSize="14sp"
+            android:hint="Search Chats"
+            android:textColor="?attr/android:textColor"
+            android:textColorHint="@color/lightGray"
+            android:inputType="text|textFilter"
+            android:maxLines="5"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:imeOptions="actionSend"/>
+        <ImageView
+            android:id="@+id/ivClearSearch"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_cancel"
+            android:tint="@color/lightGray"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emptyChats"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:paddingBottom="@dimen/_10sdp"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_sms"
+            android:tint="?attr/colorPrimary"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You have no any chat click button to search peoples for chat"
+            android:textColor="@color/muted_color"
+            android:visibility="visible"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emptyChatsSearch"
+        android:layout_marginTop="50dp"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:paddingBottom="@dimen/_10sdp"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_search"
+            android:tint="?attr/colorPrimary"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tvErrorSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No match for chats available"
+            android:textColor="@color/muted_color"
+            android:visibility="visible"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp" />
+
+    </LinearLayout>
+
+
+    <!-- CHAT LIST -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="16dp"
+        android:id="@+id/rvChats"
+        android:layout_below="@id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabNewChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_new_chat"
+        app:tint="@color/white"
+        app:backgroundTint="?attr/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"/>
+
+</RelativeLayout>

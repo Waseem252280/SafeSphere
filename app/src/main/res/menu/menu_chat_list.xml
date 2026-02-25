@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_delete_all_for_me"
+        android:title="Delete all chats for me"
+        android:icon="@drawable/ic_delete_forever"
+        android:iconTint="@color/white"
+        android:showAsAction="never" />
+
+</menu>

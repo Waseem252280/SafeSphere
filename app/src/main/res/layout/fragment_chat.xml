@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chatRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="false"
+    android:background="@drawable/chat_bg_light">
+
+    <!-- ================= TOP BAR ================= -->
+    <LinearLayout
+        android:id="@+id/chatToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:minHeight="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/profile"
+            android:background="@drawable/ripple_circle"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Name"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/tvUserStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="#FBFCFC"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/cardIconButton"
+                android:id="@+id/btnVideoCall"
+                android:drawableTint="@color/white"
+                android:background="@drawable/circle_primary_bg"
+                android:drawableStart="@drawable/ic_video"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:elevation="0dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/cardIconButton"
+                android:id="@+id/btnVoiceCall"
+                android:drawableStart="@drawable/ic_voice_call"
+                android:drawableTint="@color/white"
+                android:background="@drawable/circle_primary_bg"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:elevation="0dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/chatOptions"
+                style="@style/cardIconButton"
+                android:layout_marginEnd="0dp"
+                android:drawableStart="@drawable/ic_search_any"
+                android:drawableTint="@color/white"
+                android:background="@drawable/circle_primary_bg"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ================= CHAT LIST ================= -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="@dimen/_8sdp"
+        android:scrollbarStyle="outsideOverlay"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/recording"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_gravity="center_horizontal"
+        app:lottie_fileName="recorder.json"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true" />
+
+    <include layout="@layout/bottomsheet_attach" />
+
+    <!-- ================= MESSAGE INPUT ================= -->
+    <LinearLayout
+        android:id="@+id/messageBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:padding="8dp">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:background="@drawable/bg_message"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginEnd="8dp">
+
+            <EditText
+                android:id="@+id/etMessage"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="Type a message"
+                android:textColor="?attr/android:textColor"
+                android:textColorHint="#8696A0"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:imeOptions="actionSend"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/cardIconButton"
+                android:id="@+id/btnAttach"
+                android:drawableStart="@drawable/ic_attach"
+                android:drawableTint="@color/lightGray"
+                android:background="@drawable/ripple_circle"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_camera"
+                style="@style/cardIconButton"
+                android:drawableStart="@drawable/ic_camera"
+                android:drawableTint="@color/lightGray"
+                android:background="@drawable/ripple_circle"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnMic"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_mic"
+            android:tint="@color/white"
+            android:background="@drawable/circle_primary_bg"
+            android:padding="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <ImageView
+            android:id="@+id/btnSend"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_send"
+            android:tint="@color/white"
+            android:visibility="gone"
+            android:background="@drawable/circle_primary_bg"
+            android:padding="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+</LinearLayout>

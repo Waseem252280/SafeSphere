@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:backgroundTint="?attr/android:colorBackground"
+        app:contentPadding="@dimen/_10sdp"
+        android:paddingHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/heading3"
+                    android:text="Waseem (Brother)"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="5dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/status"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="@dimen/_9ssp"
+                        android:text="Online"
+                        android:textColor="@color/green" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/messageBtn"
+                        style="@style/cardIconButton"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:padding="@dimen/_2sdp"
+                        android:drawableStart="@drawable/ic_message"
+                        android:background="@drawable/card_icon_button_bg"
+                        android:drawableTint="?attr/android:textColor"
+                        android:layout_marginStart="@dimen/_16sdp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/videoBtn"
+                        style="@style/cardIconButton"
+                        android:background="@drawable/card_icon_button_bg"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:padding="@dimen/_2sdp"
+                        android:drawableStart="@drawable/ic_video"
+                        android:drawableTint="?attr/android:textColor"
+                        android:layout_marginStart="@dimen/_10sdp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/locationBtn"
+                        style="@style/cardIconButton"
+                        android:background="@drawable/card_icon_button_bg"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:padding="@dimen/_2sdp"
+                        android:drawableStart="@drawable/ic_location"
+                        android:drawableTint="?attr/android:textColor"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        />
+                </LinearLayout>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_marginTop="@dimen/_4sdp">-->
+<!--                    <ImageView-->
+<!--                        android:layout_width="@dimen/_11sdp"-->
+<!--                        android:layout_height="@dimen/_11sdp"-->
+<!--                        android:background="@drawable/ic_battery"-->
+<!--                        android:backgroundTint="@color/muted_color"/>-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/batteryStatus"-->
+<!--                        style="@style/descriptionText"-->
+<!--                        android:text="92% battery"-->
+<!--                        android:layout_marginStart="@dimen/_3sdp"/>-->
+<!--                </LinearLayout>-->
+
+                    <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="@dimen/_4sdp">
+                            <ImageView
+                                android:id="@+id/ivBattery"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ic_power"
+                                android:backgroundTint="?attr/android:textColor"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:id="@+id/batteryStatus"
+                                style="@style/descriptionText"
+                                android:textColor="?attr/android:textColor"
+                                android:text="92%"
+                                android:textSize="8sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_3sdp"/>
+                        </FrameLayout>
+
+                        <ImageView
+                            android:layout_marginStart="10dp"
+                        android:layout_width="@dimen/_11sdp"
+                        android:layout_height="@dimen/_11sdp"
+                            android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_location"
+                        android:backgroundTint="?attr/android:textColor"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/locationInfo"
+                        android:textColor="?attr/android:textColor"
+                        android:layout_gravity="center_vertical"
+                        style="@style/descriptionText"
+                        android:textSize="10sp"
+                        android:text=" Hyderabad"
+                        android:maxLines="1"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>

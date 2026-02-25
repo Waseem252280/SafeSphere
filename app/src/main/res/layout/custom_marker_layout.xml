@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="60dp"
+        android:layout_height="75dp"
+        android:background="@drawable/marker_pin_bg"
+        android:padding="4dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="1dp"
+            android:layout_gravity="top|center_horizontal"
+            android:src="@drawable/profile"
+            app:civ_border_color="#FFFFFF"
+            app:civ_border_width="1dp" />
+
+        <ImageView
+            android:id="@+id/ivStatusDot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/bg_status_dot"
+            android:src="@drawable/ic_status_dot"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="top|end"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/label_bg_transparent"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Waseem Khan"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Battery :  "
+                android:textColor="#EEEEEE"
+                android:textSize="9sp" />
+
+            <ImageView
+                android:id="@+id/ivBattery"
+                android:layout_width="12dp"
+                android:layout_height="13dp"
+                android:src="@drawable/ic_power"
+                android:tint="#00FF00" />
+
+            <TextView
+                android:id="@+id/txtBattery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="85%"
+                android:textColor="#EEEEEE"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtCity"
+            android:layout_width="150dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:text="Hyderabad, Pakistan"
+            android:textColor="#CCCCCC"
+            android:textSize="8sp" />
+
+    </LinearLayout>
+</LinearLayout>

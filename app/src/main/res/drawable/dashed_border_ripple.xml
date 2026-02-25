@@ -1,0 +1,6 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorPrimaryVariant">
+
+    <item android:drawable="@drawable/dashed_border" />
+
+</ripple>

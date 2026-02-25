@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.navy_blue" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/navy_blue</item>
+        <item name="colorPrimaryVariant">@color/navy_blue_spray</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:colorBackground">@color/light_mode</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

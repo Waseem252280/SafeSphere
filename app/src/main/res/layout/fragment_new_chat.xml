@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/android:colorBackground">
+
+    <!-- 🔝 TOP BAR -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:padding="16dp"
+        android:background="?attr/android:colorBackground">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Chat"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/android:textColor"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <!-- 🔍 SEARCH USER -->
+    <LinearLayout
+        android:id="@+id/searchBar"
+        android:layout_below="@id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_message">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_search_any"
+            android:tint="@color/lightGray"
+            android:layout_gravity="center_vertical"/>
+
+        <EditText
+            android:id="@+id/etSearchUsers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Search name or email"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/lightGray"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:inputType="text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emptyChatsSearch"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:paddingBottom="@dimen/_10sdp"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_search"
+            android:tint="?attr/colorPrimary"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tvErrorSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No match for chats available"
+            android:textColor="@color/muted_color"
+            android:visibility="visible"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp" />
+
+    </LinearLayout>
+
+    <!-- 👥 USERS LIST -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvUsers"
+        android:layout_below="@id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="8dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/primary_theme"
+          android:title="Primary"
+          android:icon="@drawable/ic_colored_circle"
+          android:iconTint="@color/cyan"/>
+    <item android:icon="@drawable/ic_colored_circle"
+          android:title="Dark"
+          android:id="@+id/dark_theme"
+          android:iconTint="@color/black"/>
+</menu>

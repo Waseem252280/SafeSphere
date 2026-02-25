@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/dialog_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Cancel Button on Top -->
+    <TextView
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_cancel"
+        android:drawableTint="@color/lightGray"
+        android:textColor="?attr/android:textColor"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:layout_gravity="end"
+        android:background="?attr/selectableItemBackground"
+        android:textStyle="bold" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete chat"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/muted_color"
+
+        android:layout_marginBottom="5dp" />
+
+    <!-- Message -->
+    <TextView
+        android:id="@+id/dialogMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Are you sure you want to delete this chat?"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="@color/muted_color"
+        android:layout_marginBottom="15dp" />
+
+    <!-- Buttons Layout -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:weightSum="2"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/btnDeleteForMe"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Delete for Me"
+            android:gravity="center"
+            android:padding="12dp"
+            android:textSize="10sp"
+            android:textColor="@android:color/holo_red_light"
+            android:textStyle="bold"
+            android:background="?attr/selectableItemBackground" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/btnDeleteForEveryone"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Delete for Everyone"
+            android:gravity="center"
+            android:padding="12dp"
+            android:textSize="10sp"
+            android:textColor="@android:color/holo_red_light"
+            android:textStyle="bold"
+            android:background="?attr/selectableItemBackground" />
+    </LinearLayout>
+
+</LinearLayout>

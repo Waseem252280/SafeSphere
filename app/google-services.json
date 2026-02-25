@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "9127041855",
+    "firebase_url": "https://safesphere-c3df7-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "safesphere-c3df7",
+    "storage_bucket": "safesphere-c3df7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9127041855:android:29aaf4c8aa03b28eeed18a",
+        "android_client_info": {
+          "package_name": "com.example.safesphere"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9127041855-gvntp0njo736a58vkmornfjnafqb2rv8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.safesphere",
+            "certificate_hash": "9fc0c38513cce554addce8c0837783743cf69b39"
+          }
+        },
+        {
+          "client_id": "9127041855-t1vl37fehjn953c5fjbrurcudduea877.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDTzVYqpbKURIcjZb8GZIvALHfKw3fwXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9127041855-t1vl37fehjn953c5fjbrurcudduea877.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

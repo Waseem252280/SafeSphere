@@ -1,0 +1,94 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/android:colorBackground"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/_30sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_safe"/>
+
+        <TextView
+            android:textColor="?attr/android:textColor"
+            android:text="Safety Permissions"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="?attr/android:textColor"
+            android:text="We need these permissions to protect you during emergencies."
+            android:layout_marginBottom="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView android:text=" Battery optimization ignore"
+                android:layout_marginBottom="20dp"
+                android:textColor="?attr/android:textColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:drawableTint="?attr/android:textColor"
+                android:drawableStart="@drawable/ic_battery"/>
+
+            <TextView android:text=" Location (Always allow)"
+                android:layout_marginBottom="20dp"
+                android:textColor="?attr/android:textColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:drawableTint="?attr/android:textColor"
+                android:drawableStart="@drawable/ic_location"/>
+
+            <TextView android:text=" SMS access"
+                android:layout_marginBottom="20dp"
+                android:textColor="?attr/android:textColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:drawableTint="?attr/android:textColor"
+                android:drawableLeft="@drawable/ic_message"/>
+
+            <TextView android:text=" Background location"
+                android:layout_marginBottom="30dp"
+                android:textColor="?attr/android:textColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:drawableTint="?attr/android:textColor"
+                android:drawableStart="@drawable/ic_background_location"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnGrant"
+            android:text="Grant and Continue"
+            android:layout_width="wrap_content"
+            android:background="@drawable/btn_ractangle"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_marginTop="30dp"
+            android:drawableTint="@color/white"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_safety"/>
+
+    </LinearLayout>
+</ScrollView>

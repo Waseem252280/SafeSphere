@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.UpdateProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_28sdp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/heading2"
+                android:text="Update Profile"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/cardView"
+                android:backgroundTint="?attr/colorOnPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image"
+                            android:layout_width="@dimen/_95sdp"
+                            android:layout_height="@dimen/_95sdp"
+                            android:src="@drawable/ic_person"
+                            android:layout_gravity="center"/>
+                        <androidx.appcompat.widget.AppCompatButton
+                            style="@style/IconButton"
+                            android:id="@+id/btnCameraGallery"
+                            android:layout_marginTop="@dimen/_90sdp"
+                            android:drawableStart="@drawable/ic_camera"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/cardView"
+                android:backgroundTint="?attr/colorOnPrimary">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatButton
+                            style="@style/IconButton"
+                            android:drawableStart="@drawable/ic_person"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginHorizontal="@dimen/_13sdp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Name"
+                                android:textColor="@color/muted_color"/>
+                            <EditText
+                                android:id="@+id/etFullName"
+                                style="@style/FormField"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Waseem Sanjrani"
+                                android:inputType="text"
+                                android:drawableRight="@drawable/ic_pencil"/>
+                            <TextView
+                                style="@style/descriptionText"
+                                android:text="This name will be visible on Safe Sphere and to your freinds." />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/cardView"
+                android:backgroundTint="?attr/colorOnPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatButton
+                            style="@style/IconButton"
+                            android:id="@+id/btnMale"
+                            android:backgroundTint="?attr/colorOnPrimary"
+                            android:drawableStart="@drawable/ic_male"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginHorizontal="@dimen/_13sdp">
+                            <TextView
+                                style="@style/FormField"
+                                android:text="Male"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:layout_gravity="center"
+                                />
+                            <TextView
+                                style="@style/descriptionText"
+                                android:text="Your gender will use for family relationship." />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatButton
+                            style="@style/IconButton"
+                            android:id="@+id/btnFemale"
+                            android:drawableStart="@drawable/ic_female"
+                            android:backgroundTint="?attr/colorOnPrimary"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginHorizontal="@dimen/_13sdp">
+                            <TextView
+                                style="@style/FormField"
+                                android:text="Female"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:layout_gravity="center"
+                                />
+                            <TextView
+                                style="@style/descriptionText"
+                                android:text="Your gender will use for family relationship." />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Buttons Row (Unchanged as you said) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCancel"
+                    style="@style/IconButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:text="Cancel"
+                    android:drawableStart="@drawable/ic_logout"
+                    android:drawableTint="?attr/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRegister"
+                    style="@style/activeButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/white"
+                    android:text="Update Now"
+                    android:drawableEnd="@drawable/ic_editing"
+                    android:drawableTint="@color/white"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_call"
+        android:icon="@drawable/ic_phone"
+        android:iconTint="@color/green"
+        android:title="Call" />
+    <item
+        android:id="@+id/menu_edit"
+        android:icon="@drawable/ic_editing"
+        android:iconTint="@color/navy_blue"
+        android:title="Edit" />
+    <item
+        android:id="@+id/menu_delete"
+        android:iconTint="@color/red"
+        android:icon="@drawable/ic_delete"
+        android:title="Delete" />
+</menu>

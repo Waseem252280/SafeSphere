@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="6dp"
+    android:background="@drawable/marker_bg"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_person"
+        android:scaleType="centerCrop"
+        android:background="@drawable/circle_bg"/>
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="User Name"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:textColor="?attr/android:textColor"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_11sdp"
+            android:layout_height="@dimen/_11sdp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_location"
+            android:backgroundTint="?attr/android:textColor"/>
+        <TextView
+            android:id="@+id/txtCity"
+            android:textColor="?attr/android:textColor"
+            android:layout_gravity="center_vertical"
+            style="@style/descriptionText"
+            android:text=" Hyderabad"/>
+    </LinearLayout>
+    <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_power"
+                android:backgroundTint="?attr/android:textColor"
+                android:layout_gravity="center_vertical"/>
+            <TextView
+                android:id="@+id/txtBattery"
+                style="@style/descriptionText"
+                android:textColor="?attr/android:textColor"
+                android:text="92%"
+                android:textSize="8sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_3sdp"/>
+        </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@color/transparent"
+    android:layout_marginBottom="0dp"
+    android:backgroundTint="?attr/android:colorBackground"
+    android:elevation="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardUseCompatPadding="true"
+    android:id="@+id/attach_bottomsheet">
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/cardIconButton"
+        android:id="@+id/hide_bottomsheet"
+        android:drawableStart="@drawable/ic_cancel"
+        android:drawableTint="@color/lightGray"
+        android:background="@drawable/ripple_circle"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_gravity="end"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_marginTop="50dp">
+
+        <!-- ROW 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <include layout="@layout/item_attach_gallery"/>
+            <include layout="@layout/item_attach_event"/>
+            <include layout="@layout/item_attach_camera"/>
+
+        </LinearLayout>
+
+        <!-- ROW 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <include layout="@layout/item_attach_doc"/>
+            <include layout="@layout/item_attach_audio"/>
+            <include layout="@layout/item_attach_contact"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

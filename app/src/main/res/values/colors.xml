@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Colors -->
+    <color name="black">#000A0A</color>
+    <color name="secondary_black">#A1292E2E</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FC2F5B</color>
+    <color name="green">#19E103</color>
+    <color name="dark_green">#039641</color>
+    <color name="transparent">#00000000</color>
+    <color name="lightGray">#FCB5B5B5</color>
+    <!-- colors.xml -->
+    <color name="selected_bg">#32434343</color>
+
+
+    <!-- Theme Backgrounds -->
+    <color name="night_mode">#080B0B</color>
+    <color name="light_mode">#EDEDED</color>
+    <color name="muted_color">#AB888888</color>
+
+    <!-- Theme Variants -->
+    <color name="dark_pink">#F40255</color>
+    <color name="dark_pink_spray">#75FF8DB3</color>
+    <color name="navy_blue">#0295D4</color>
+
+    <color name="sky_blue">#40C4FF</color>
+    <color name="navy_blue_spray">#7590C9FE</color>
+    <color name="dark_orange">#E85303</color>
+    <color name="dark_orange_spray">#75FFAA88</color>
+    <color name="lime">#FB92A000</color>
+    <color name="lime_spray">#74F6FC89</color>
+    <color name="yellow">#C9A001</color>
+    <color name="yellow_spray">#71FBDF6E</color>
+    <color name="teal">#026442</color>
+    <color name="teal_spray">#3121DA9D</color>
+    <color name="cyan">#18FFFF</color>
+    <color name="cyan_spray">#6F7FF0FB</color>
+
+    <!-- Theme Key Colors (used in themes) -->
+    <color name="colorPrimary">#5108AA</color> <!-- default green -->
+    <color name="colorPrimaryVariant">#6CC08FFE</color>
+    <color name="colorOnPrimary">#FAFBFB</color>
+
+</resources>

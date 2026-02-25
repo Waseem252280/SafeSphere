@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.teal" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/teal</item>
+        <item name="colorPrimaryVariant">@color/teal_spray</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:colorBackground">@color/light_mode</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

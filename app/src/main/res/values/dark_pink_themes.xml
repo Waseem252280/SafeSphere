@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.dark_pink" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/dark_pink</item>
+        <item name="colorPrimaryVariant">@color/dark_pink_spray</item>
+        <item name="colorOnPrimary">@color/secondary_black</item>
+        <item name="android:colorBackground">@color/night_mode</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>

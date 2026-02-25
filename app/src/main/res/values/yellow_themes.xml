@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.yellow" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorPrimaryVariant">@color/yellow_spray</item>
+        <item name="colorOnPrimary">@color/secondary_black</item>
+        <item name="android:colorBackground">@color/night_mode</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>

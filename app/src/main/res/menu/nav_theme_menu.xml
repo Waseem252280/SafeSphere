@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/btnCyan"
+        android:title="Cyan Dark Mode"
+        android:icon="@drawable/ic_colored_circle"
+        android:iconTint="@color/cyan" />
+
+    <item
+        android:id="@+id/btnTeal"
+        android:title="Teal Light Mode"
+        android:icon="@drawable/ic_colored_circle"
+        android:iconTint="@color/teal" />
+
+    <item
+        android:id="@+id/btnPrimary"
+        android:title="Purple Light Mode"
+        android:icon="@drawable/ic_colored_circle"
+        android:iconTint="@color/colorPrimary" />
+
+    <item
+        android:id="@+id/btnYellow"
+        android:title="Yellow Dark Mode"
+        android:icon="@drawable/ic_colored_circle"
+        android:iconTint="@color/yellow" />
+
+    <item
+        android:id="@+id/btnDark"
+        android:title="Teal Dark Mode"
+        android:icon="@drawable/ic_colored_circle"
+        android:iconTint="@color/teal" />
+
+
+    <item
+        android:id="@+id/btnNavyBlue"
+        android:title="Navy Blue Light Mode"
+        android:icon="@drawable/ic_colored_circle"
+        android:iconTint="@color/navy_blue" />
+
+    <item
+        android:id="@+id/btnDarkPink"
+        android:title="Pink Dark Mode"
+        android:icon="@drawable/ic_colored_circle"
+        android:iconTint="@color/dark_pink" />
+
+    <item
+        android:id="@+id/btnOrange"
+        android:title="Orange Dark Mode"
+        android:icon="@drawable/ic_colored_circle"
+        android:iconTint="@color/dark_orange" />
+
+</menu>
